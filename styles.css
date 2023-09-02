@@ -5,9 +5,12 @@
 }
 :root{
     --welcome-section-text:white;
+    --text-color:white;
     --button-color:rgb(136, 236, 231,.85);
     --button-color-anim:rgb(136, 236, 231);
     --button-text:black;
+    --background-color:black;
+    --about-us-box-color:linear-gradient(to right, #ffad48, #ed8f03);
 }
 a{
     text-decoration: none;
@@ -16,11 +19,13 @@ li{
     list-style-type: none;
 }
 body{
-    background-color: white;
+    background-color: var(--background-color);
     margin: 0;
     padding: 0;
     font-family:Arial, Helvetica, sans-serif;
     scroll-behavior: smooth;
+    color: var(--text-color);
+    overflow-x: hidden;
 }
 html{
     scroll-behavior: smooth;
@@ -149,6 +154,7 @@ section navbar end welcome section start
 .welcome-image button:hover{
     background-color: var(--button-color-anim);
     cursor: pointer;
+    transform: translateX(5px) skew(-20deg);
 }
 @media (max-width:1000px) {
     .welcome-title{
@@ -171,6 +177,99 @@ section navbar end welcome section start
     }
 }
 
+/*
+welcome end about us start
+*/
+
+.About-Us{
+    margin-top: 160px;
+}
+.About-Us-box{
+    width: 95%;
+    margin: 0 auto;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+    line-height: 2.0rem;
+    padding: 0.3rem 1rem 1rem 1rem;
+    border-radius: 6px;
+    border-left: 2px solid #ed8f03;
+    border-right: 2px solid #ed8f03;
+}
+.About-Us-Book{
+    width: 200px;
+    height: 45px;
+    border: none;
+    background-color: var(--button-color);
+    color: var(--button-text);
+    font-weight: bold;
+    font-size: 0.8rem;
+    transform: skew(-20deg);
+    transition: 0.5s;
+    margin-left: 50px;
+}
+.About-Us-Book p{
+    transform: skew(20deg);
+}
+.About-Us-Book:hover{
+    background-color: var(--button-color-anim);
+    cursor: pointer;
+    transform: translateX(5px) skew(-20deg);
+}
+@media (max-width:500px) {
+    .About-Us{
+        margin-top: 120px;
+    }
+}
+
+/*
+2 images
+*/
+
+.images-2{
+    display: grid;
+    width: 97%;
+    height: 90vh;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    margin:130px auto;
+}
+.images-2 .imgg-1{
+    background-image: url(./images/random1.jpg);
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+    grid-column: span 2;
+}
+.images-2 .imgg-2{
+    background-image: url(./images/random2.jpg);
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    border-radius: 6px;
+    grid-row: span 2;
+    margin-right: 100px;
+}
+.images-2 .imgg-3{
+    background-image: url(./images/random3.jpg);
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+    grid-column: span 2;
+}
+
+/*
+about us end srcolling img start
+*/
+
 @keyframes slidy {
     0% { left: 0%; }
     20% { left: 0%; }
@@ -185,6 +284,9 @@ section navbar end welcome section start
     100% { left: -300%; }
 }
 
+.our-services{
+    margin-top: 180px;
+}
 .container-images{
     overflow: hidden;
     position: relative;
@@ -230,8 +332,6 @@ section navbar end welcome section start
     opacity: 0.75;
     display: block;
 }
-
-
 .container-images img{
     aspect-ratio: 2/4;
     height: 20vh;
@@ -252,4 +352,71 @@ section navbar end welcome section start
     width: 100%;
     height: 100%;
     aspect-ratio: 16/8;
+}
+.grid-box .left{
+    padding-left: 100px;
+}
+.book-now{
+    width: 200px;
+    height: 45px;
+    border: none;
+    background-color: var(--button-color);
+    color: var(--button-text);
+    font-weight: bold;
+    font-size: 0.8rem;
+    transform: skew(-20deg);
+    transition: 0.5s;
+    margin-left: 50px;
+}
+.book-now p{
+    transform: skew(20deg);
+}
+.book-now:hover{
+    background-color: var(--button-color-anim);
+    cursor: pointer;
+    transform: translateX(5px) skew(-20deg);
+}
+@media (max-width:850px) {
+    .grid-box .right{
+        display:none;
+        position: absolute;
+        visibility: hidden;
+    }
+    .grid-box .left{
+        grid-column: span 2;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/*
+slider end rooms start
+*/
+
+.our-rooms{
+    margin-top: 150px;
+    width: 100%;
+    background-image: url(./images/back-rooms.jpg);
+    height: 400px;
+    background-size: cover;
+    object-fit: contain;
+    background-position: center;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    isolation: isolate;
+}
+.our-rooms::before{
+    content: '';
+    position: absolute;
+    background:black;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.2;
+}
+.our-rooms h1{
+    color: var(--text-color);
+    font-size: 3rem;
+    letter-spacing: 2px;
 }
