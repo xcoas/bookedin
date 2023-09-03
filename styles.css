@@ -6,11 +6,12 @@
 :root{
     --welcome-section-text:white;
     --text-color:white;
-    --button-color:rgb(136, 236, 231,.85);
-    --button-color-anim:rgb(136, 236, 231);
+    --button-color:rgb(245,175,25,.85);
+    --button-color-anim:rgb(245,175,25);
     --button-text:black;
     --background-color:black;
     --about-us-box-color:linear-gradient(to right, #ffad48, #ed8f03);
+    --learn-more-button:#f5af19;
 }
 a{
     text-decoration: none;
@@ -30,7 +31,6 @@ body{
 html{
     scroll-behavior: smooth;
 }
-
 
 .navbar{
     position: absolute;
@@ -99,10 +99,12 @@ section navbar end welcome section start
 .welcome-section{
     height: 60vh;
     width: 100%;
+    max-width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--welcome-section-text);
+    overflow: hidden;
 }
 .welcome-section a{
     color: var(--welcome-section-text);
@@ -116,7 +118,8 @@ section navbar end welcome section start
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0;
+    
     height: 70vh;
     background-image: url(./images/welcome.jpg);
     background-size: cover;
@@ -125,6 +128,8 @@ section navbar end welcome section start
     background-position: center;
     border-radius: 0 0 50% 50%/0 0 100% 100%;
     transform: scaleX(2);
+    overflow: hidden;
+    max-width: 100vw;
 }
 .welcome-title{
     font-size: 3.5rem;
@@ -265,6 +270,14 @@ welcome end about us start
     border-radius: 6px;
     grid-column: span 2;
 }
+@media (max-width:400px) {
+    .images-2 .imgg-2{
+        display: none;
+    }
+    .images-2 .imgg-1, .images-2 .imgg-3{
+        grid-column: span 3;
+    }
+}
 
 /*
 about us end srcolling img start
@@ -286,10 +299,12 @@ about us end srcolling img start
 
 .our-services{
     margin-top: 180px;
+    height: 500px;
 }
 .container-images{
     overflow: hidden;
     position: relative;
+    height: 100%;
 }
 .slider{
     scroll-behavior: smooth;
@@ -298,11 +313,12 @@ about us end srcolling img start
     grid-template-columns: repeat(4, 1fr);
     overflow-x: auto;
     overflow: visible;
-    height: 300px;
+    height: 500px;
     margin: 0 auto;
     animation: 15s slidy infinite; 
 }
 .slider .grid-box{
+    height: 100%;
     width: 100vw;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -338,21 +354,6 @@ about us end srcolling img start
     width: 70vw;
 }
 
-.images-box{
-    display: grid;
-    gap: 1px;
-    grid-auto-flow: column;
-    height: 100px;
-    overflow:auto;
-}
-
-.images-box img{
-    min-width: 200px;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 16/8;
-}
 .grid-box .left{
     padding-left: 100px;
 }
@@ -419,4 +420,210 @@ slider end rooms start
     color: var(--text-color);
     font-size: 3rem;
     letter-spacing: 2px;
+}
+
+/*
+new area start
+*/
+
+.new-area{
+    margin-top: 170px;
+    margin-bottom: 170px;
+}
+.new-area-box{
+    display: grid;
+    width: 95%;
+    height: 40vh;
+    grid-template-columns: repeat(2, 1fr);
+}
+.new-area .left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.new-area .right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.8rem;
+    letter-spacing: 1.4px;
+    word-spacing: 2px;
+}
+.new-area .left img{
+    width: 90%;
+    height: 80%;
+}
+.new-area .left button{
+    width: 175px;
+    height: 50px;
+    border: 3px solid var(--learn-more-button);
+    border-radius: 4px;
+    background-color: var(--learn-more-button);
+    color: var(--button-text);
+    transition: 0.3s;
+}
+.new-area .left button:hover{
+    color: var(--learn-more-button);
+    background-color: var(--button-text);
+    cursor: pointer;
+}
+.under-newarea-images{
+    display: grid;
+    grid-template-columns: 60vw 40vw;
+    width: 100%;
+    height: 60vh;
+    margin-top: 280px;
+}
+.new-area .imggg-1{
+    background-image: url(./images/garden-1.jpg);
+    height: 100%;
+    width: 90%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+    margin: 0 auto;
+}
+.new-area .imggg-2{
+    background-image: url(./images/garden-2.jpg);
+    height: 90%;
+    width: 90%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+    margin: 0 auto;
+}
+.title{
+    color: var(--learn-more-button);
+}
+.secound-button{
+    display: none;
+    width: 175px;
+    height: 50px;
+    border: 3px solid var(--learn-more-button);
+    border-radius: 4px;
+    background-color: var(--learn-more-button);
+    color: var(--button-text);
+    transition: 0.3s;
+}
+.secound-button:hover{
+    color: var(--learn-more-button);
+    background-color: var(--button-text);
+    cursor: pointer;
+}
+@media (max-width:800px) {
+    .new-area-box img, .new-area-box .left button{
+        display: none;
+    }
+    .new-area-box .right{
+        grid-column: span 2;
+        margin-bottom: 20px;
+    }
+    .new-area-box{
+        margin-left: 10px;
+    }
+    .secound-button{
+        display: block;
+    }
+    .under-newarea-images{
+        margin-top: 180px;
+        grid-template-columns: 90%;
+        grid-template-rows: repeat(2, 1fr);
+        gap: 80px;
+        height: 90vh;
+    }
+}
+@media (max-width:550px){
+    .under-newarea-images{
+        margin-top: 450px;
+    }
+    .new-area-box{
+        margin-bottom: 200px;
+    }
+}
+@media (max-width:300px){
+    .under-newarea-images{
+        margin-top: 550px;
+    }
+}
+@media (max-width:280px){
+    .under-newarea-images{
+        margin-top: 600px;
+    }
+}
+
+/*
+new area end map start
+*/
+
+.mappo{
+    width: 100%;
+}
+
+/*
+map end footer starts
+*/
+
+.footer{
+    width: 100%;
+    margin-top: 150px;
+    background-color: var(--background-color);
+    border-top: 2px solid #333;
+    padding-top: 25px;
+}
+.images-box{
+    display: grid;
+    gap: 1px;
+    grid-auto-flow: column;
+    height: 150px;
+    overflow:auto;
+}
+
+.images-box img{
+    min-width: 200px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/8;
+}
+
+.footer-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.footer-logo, .footer-contact, .footer-socials{
+    margin:auto;
+}
+.footer-logo{
+    font-size: 1.8rem;
+}
+.footer-contact{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+}
+.footer-contact i, .footer-contact p{
+    color: var(--text-color);
+}
+.contact{
+    text-align: center;
+}
+.footer-socials{
+    display: flex;
+    gap: 15px;
+}
+.footer-socials *{
+    color: var(--text-color);
+    scale: 1.3;
+}
+@media (max-width:340px) {
+    .footer-grid{
+        grid-template-columns: 1fr;
+        padding-bottom: 35px;
+    }
 }
